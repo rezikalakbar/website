@@ -3,18 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REZIKAL AKBAR</title>
+    <title>Rezikal Akbar</title>
+    <style>
+        body{    font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-image: url('https://img.freepik.com/premium-vector/hand-drawn-abstract-doodle-aesthetic-background-8_778302-1263.jpg?semt=ais_hybrid');
+            
+            color:blue;}
+		{
+            font-family: 'DaFont', sans-serif;
+            margin: 0;
+            padding: 0;
+           background-color: #f4f4f4 ;
+            color: #333;
+        }
+
+        header {
+            
+            color: blue;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: 256;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: blue;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            color: 256;
+            text-decoration: underline;
+        }
+
+        
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+          ;
+            color:blue;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .feature {
+            flex: 1;
+            padding: 20px;
+            margin: 0 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .contact {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: 000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 10px;
+            padding: 8px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            font-size: 1.2em;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-info p {
+		    color: blue;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: blue;
+           
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        footer p {
+		    color: white;
+            margin: 0;
+            font-size: 1em;
+		}
+        .social-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: blue; /* Gold color for better visibility */
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+            color: #FF4500; 
+        }
+		 @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .blink {
+            animation: blink 1s infinite; /* Durasi 1 detik, berulang terus */
+        }
+		 }
+
+        .transparent-box {
+            background-color: rgba(255, 255, 255, 0.7); /* Putih dengan transparansi 70% */
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block; /* Agar box tidak memenuhi lebar penuh */
+            color: black; /* Warna teks */
+        }
+    </style>
 </head>
 <body>
+ <div class="container">
     <header>
-        <h1>Haloo</h1>
+        <h1 class="blink">Selamat Datang !!</h1>
     </header>
-    <main>
-        <h2>P</h2>
-        
-    </main>
+
+    <nav>
+        <a href="#home">Beranda</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#services">Layanan</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+
+    <div class="hero">
+        <h2><b>Follow my Social Media</h2>
+    </div>
+
+    <div class="transparent-box">
+        <div class="features">
+            <div class="feature">
+             <div  class="social-links">
+        <a href="https://api.whatsapp.com/send/?phone=6285216775931&text&type=phone_number&app_absent=0 target="_blank"> <h3>WhatsApp</h3></a>
+        <div class="feature">
+             <div  class="social-links">
+		<a href="https://www.instagram.com/rezikal.a" target="_blank"> <h3>Instagram</h3></a>
+       <div class="feature">
+             <div  class="social-links">
+	   <a href="https://www.tiktokcom/in/@rezikal5" target="_blank"> <h3>TikTok</h3></a>
+    </div>
+            </div>
+       
+
+        <div class="contact" id="contact">
+            <h2>Hubungi Kami</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Nama Anda" required>
+                <input type="email" placeholder="Email Anda" required>
+                <textarea placeholder="Pesan Anda" rows="5" required></textarea>
+                <button type="submit">Kirim Pesan</button>
+            </form>
+            <div class="contact-info">
+                <p>Email: rezikalakbar.com</p>
+                <p>Telepon: +62 852 1677 5931</p>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <p> REZIKAL AKBAR.</p>
+        <p>&copy; Rezikal Akbar.</p>
     </footer>
+
 </body>
 </html>
