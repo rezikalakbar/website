@@ -1,0 +1,197 @@
+/* Pastikan body dan html memiliki tinggi 100% */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #3e351e;
+  color: #F5F5DC;
+}
+
+/* Buat container utama menggunakan Flexbox */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+nav {
+  background: linear-gradient(90deg, #684f1d, #333333);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  width: 30px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* Menu List */
+.menu-list {
+  display: none;
+  flex-direction: column;
+  background: #131c23;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-list a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+
+.menu-list a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Tampilkan menu saat aktif */
+.menu-list.active {
+  display: flex;
+}
+
+/* Animasi untuk hamburger icon */
+.menu-icon.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Konten Utama */
+.content {
+  flex: 1;
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  background: linear-gradient(135deg, #3e351e, #5a4b32);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Animasi untuk teks "Selamat Datang" */
+.welcome-text {
+  font-size: 3em;
+  font-weight: bold;
+  color: #F5F5DC;
+  animation: fadeIn 2s ease-in-out, slideIn 1.5s ease-in-out;
+  animation: glow 2s infinite alternate, move 3s ease-in-out infinite;
+}
+
+/* Efek hover pada teks "Selamat Datang" */
+.welcome-text:hover {
+  color: hsl(105, 86%, 48%);
+  transition: color 0.3s ease;
+}
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #ff7e5f, 0 0 10px #feb47b, 0 0 20px #489fc2;
+  }
+  100% {
+    text-shadow: 0 0 10px #ff7e5f, 0 0 20px #feb47b, 0 0 40px #489fc2;
+  }
+}
+/* Animasi fadeIn */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Animasi slideIn */
+@keyframes slideIn {
+  from {
+      transform: translateY(-50px);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #2d2d2b;
+  color: #c3b2b2;
+  text-align: center;
+  padding: 5px 0;
+  flex-shrink: 0; /* Footer tidak akan menyusut */
+  min-height: 40px; /* Tinggi minimum footer */
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 20px;
+}
+
+.social-media a {
+  margin: 0 15px;
+  color: #efd6d6; /* Warna ikon diubah agar kontras */
+  font-size: 32px; /* Ukuran ikon diperkecil */
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #666; /* Warna ikon saat dihover */
+}
+
+footer p {
+  margin: 0 15px;
+  font-size: 12px; /* Ukuran teks diperkecil */
+}
+/* Efek Daun Jatuh */
+#leaf-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Agar tidak mengganggu interaksi pengguna */
+  z-index: 1; /* Pastikan daun di belakang konten */
+}
+
+.leaf {
+  position: absolute;
+  top: -10%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh); /* Jatuh sampai ke bawah layar */
+  }
+}
