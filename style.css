@@ -1,153 +1,163 @@
-/* Pastikan body dan html memiliki tinggi 100% */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #3e351e;
-  color: #F5F5DC;
-}
-
-/* Buat container utama menggunakan Flexbox */
 body {
-  display: flex;
-  flex-direction: column;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s; /* Transisi untuk perubahan warna */
+  background-color: #f0f8ff; /* Warna latar belakang biru muda */
+  color: #000; /* Warna teks hitam */
+  display: flex; /* Menggunakan Flexbox */
+  flex-direction: column; /* Mengatur arah kolom */
+  height: 100vh; /* Mengatur tinggi body menjadi 100% dari viewport */
 }
 
-/* Navbar */
-nav {
-  background: linear-gradient(90deg, #684f1d, #333333);
-  padding: 10px 20px;
-  display: flex;
-  justify-content: flex-end;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.navbar {
+  display: flex; /* Menggunakan Flexbox */
+  align-items: center; /* Menyelaraskan item secara vertikal */
+  background-color: #007bff; /* Warna latar belakang navbar biru */
+  padding: 10px; /* Ruang di dalam navbar */
 }
 
-/* Hamburger Icon */
+.logo {
+  height: 40px; /* Atur tinggi logo */
+  margin-right: 20px; /* Ruang di sebelah kanan logo */
+}
+
 .menu-icon {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
+  display: flex; /* Menggunakan Flexbox untuk bar */
+  flex-direction: column; /* Mengatur bar menjadi kolom */
+  justify-content: space-around; /* Menyebar bar secara merata */
+  width: 30px; /* Lebar menu icon */
+  height: 30px; /* Tinggi menu icon */
+  cursor: pointer; /* Menunjukkan bahwa ini dapat diklik */
+  margin-left: auto; /* Menempatkan ikon di sebelah kanan */
 }
 
-.menu-icon span {
-  width: 30px;
-  height: 3px;
-  background: white;
-  margin: 4px 0;
-  transition: all 0.3s ease;
+.bar {
+  width: 100%; /* Lebar bar */
+  height: 4px; /* Tinggi bar */
+  background-color: white; /* Warna bar */
+  transition: all 0.3s ease; /* Transisi untuk efek */
 }
 
-/* Menu List */
-.menu-list {
-  display: none;
-  flex-direction: column;
-  background: #131c23;
-  position: absolute;
-  top: 50px;
-  right: 20px;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.nav-items {
+  display: none; /* Sembunyikan menu navigasi secara default */
+  flex-direction: column; /* Mengatur item menjadi kolom */
+  position: absolute; /* Mengatur posisi menu */
+  top: 60px; /* Jarak dari atas navbar */
+  right: 10px; /* Jarak dari kanan */
+  background-color: #007bff; /* Warna latar belakang menu */
+  border-radius: 5px; /* Sudut melengkung */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Bayangan untuk menu */
 }
 
-.menu-list a {
-  color: white;
-  text-decoration: none;
-  padding: 15px 30px;
-  text-align: center;
-  font-size: 18px;
-  transition: background 0.3s ease;
+.nav-items a {
+  color: white; /* Warna teks */
+  text-decoration: none; /* Menghilangkan garis bawah */
+  padding: 10px 20px; /* Ruang di sekitar tautan */
 }
 
-.menu-list a:hover {
-  background: rgba(255, 255, 255, 0.2);
+.nav-items a:hover {
+  background-color: #0056b3; /* Warna latar belakang saat hover */
 }
 
-/* Tampilkan menu saat aktif */
-.menu-list.active {
-  display: flex;
+.theme-switcher-container {
+  position: fixed; /* Menggunakan posisi tetap */
+  bottom: 20px; /* Jarak dari bawah */
+  left: 20px; /* Jarak dari kiri */
 }
 
-/* Animasi untuk hamburger icon */
-.menu-icon.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+button {
+  background-color: #007bff; /* Warna tombol */
+  color: white; /* Warna teks tombol */
+  border: none; /* Menghilangkan border */
+  padding: 10px 15px; /* Ruang di dalam tombol */
+  cursor: pointer; /* Menunjukkan bahwa ini dapat diklik */
+  border-radius: 15px; /* Sudut melengkung lebih besar untuk tombol */
+  transition: background-color 0.3s; /* Transisi untuk perubahan warna */
 }
 
-.menu-icon.active span:nth-child(2) {
-  opacity: 0;
+button:hover {
+  background-color: #0056b3; /* Warna tombol saat hover */
 }
 
-.menu-icon.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+
+
+
+.navbar {
+background-color: #007bff;
+color: white;
+padding: 10px;
+text-align: center;
 }
 
-/* Konten Utama */
 .content {
-  flex: 1;
-  padding: 50px 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
-  background: linear-gradient(135deg, #3e351e, #5a4b32);
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  text-align: center;
+padding: 20px;
 }
 
-/* Animasi untuk teks "Selamat Datang" */
-.welcome-text {
-  font-size: 3em;
-  font-weight: bold;
-  color: #F5F5DC;
-  animation: fadeIn 2s ease-in-out, slideIn 1.5s ease-in-out;
-  animation: glow 2s infinite alternate, move 3s ease-in-out infinite;
+iframe {
+width: 100%;
+height: 600px;
+border: none;
 }
 
-/* Efek hover pada teks "Selamat Datang" */
-.welcome-text:hover {
-  color: hsl(105, 86%, 48%);
-  transition: color 0.3s ease;
-}
-@keyframes glow {
-  0% {
-    text-shadow: 0 0 5px #ff7e5f, 0 0 10px #feb47b, 0 0 20px #489fc2;
-  }
-  100% {
-    text-shadow: 0 0 10px #ff7e5f, 0 0 20px #feb47b, 0 0 40px #489fc2;
-  }
-}
-/* Animasi fadeIn */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
+.download-button {
+display: inline-block;
+margin-top: 20px;
+padding: 10px 15px;
+background-color: #28a745;
+color: white;
+text-decoration: none;
+border-radius: 5px;
 }
 
-/* Animasi slideIn */
-@keyframes slideIn {
-  from {
-      transform: translateY(-50px);
-  }
-  to {
-      transform: translateY(0);
-  }
+.download-button:hover {
+background-color: #218838;
+}
+/* Tema gelap */
+body.dark-mode {
+  background-color: #121212; /* Warna latar belakang gelap */
+  color: white; /* Warna teks gelap */
 }
 
-/* Footer */
+body.dark-mode .navbar {
+  background-color: #007bff; /* Warna navbar gelap */
+}
+
+body.dark-mode .nav-items a {
+  color: #e0e0e0; /* Warna teks tautan gelap */
+}
+
+body.dark-mode .nav-items a:hover {
+  background-color: #575757; /* Warna latar belakang saat hover */
+}
+
+/* Efek aktif pada menu icon */
+.menu-icon.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px); /* Rotasi bar pertama */
+}
+
+.menu-icon.active .bar:nth-child(2) {
+  opacity: 0; /* Sembunyikan bar kedua */
+}
+
+.menu-icon.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px); /* Rotasi bar ketiga */
+}
+
+.content {
+  flex: 1; /* Membuat kontainer mengambil ruang yang tersedia */
+  display: flex; /* Menggunakan Flexbox untuk memusatkan konten */
+  flex-direction: column; /* Mengatur arah kolom */
+  justify-content: center; /* Memusatkan konten secara vertikal */
+  align-items: center; /* Memusatkan konten secara horizontal */
+  text-align: center; /* Memusatkan teks di dalam konten */
+  padding: 20px; /* Ruang di dalam konten */
+}
+
 footer {
-  background-color: #2d2d2b;
-  color: #c3b2b2;
   text-align: center;
   padding: 5px 0;
-  flex-shrink: 0; /* Footer tidak akan menyusut */
   min-height: 40px; /* Tinggi minimum footer */
+  color: #007bff; /* Warna teks footer */
 }
 
 .social-media {
@@ -160,38 +170,16 @@ footer {
 
 .social-media a {
   margin: 0 15px;
-  color: #efd6d6; /* Warna ikon diubah agar kontras */
+  color: #007bff; /* Warna ikon diubah agar kontras */
   font-size: 32px; /* Ukuran ikon diperkecil */
   transition: color 0.3s ease;
 }
 
 .social-media a:hover {
-  color: #666; /* Warna ikon saat dihover */
+  color: #0056b3; /* Warna ikon saat dihover */
 }
 
 footer p {
   margin: 0 15px;
   font-size: 12px; /* Ukuran teks diperkecil */
-}
-/* Efek Daun Jatuh */
-#leaf-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* Agar tidak mengganggu interaksi pengguna */
-  z-index: 1; /* Pastikan daun di belakang konten */
-}
-
-.leaf {
-  position: absolute;
-  top: -10%;
-  animation: fall linear infinite;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh); /* Jatuh sampai ke bawah layar */
-  }
-}
+} 

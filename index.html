@@ -3,109 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rezikal Akbar</title>
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome untuk ikon sosial media -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>WEB | Rezikal Akbar</title>
 </head>
 <body>
-    <!-- Efek Daun Jatuh -->
-    <div id="leaf-container"></div>
-
-    <!-- Navbar -->
-    <nav>
+    <div class="navbar">
+        <img src="logo.png" alt="Logo" class="logo"> <!-- Ganti 'logo.png' dengan nama file logo Anda -->
         <div class="menu-icon" id="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="menu-list" id="menu-list">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div> <!-- Ikon garis tiga -->
+        <div class="nav-items" id="nav-items">
             <a href="#" data-page="home">Beranda</a>
             <a href="#" data-page="about">Tentang</a>
             <a href="#" data-page="contact">Kontak</a>
-        </div>
-    </nav>
-    
-    <!-- Konten Utama -->
-    <div class="content">
-        <div class="welcome-container">
-            <h1 class="welcome-text">Selamat Datang!</h1>
-            <p class="typing-effect">Ini adalah halaman beranda.</p>
+            <a href="#" data-page="uts">UTS</a>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="gradient-footer">
+    <div class="content">
+        <h1>Selamat Datang di Website Kami</h1>
+        <p>Ini adalah contoh halaman web dengan menu navigasi yang dapat dibuka dan tombol untuk beralih tema.</p>
+    </div>
+
+    <div class="theme-switcher-container">
+        <button id="theme-switcher">🎨Switch to Dark Mode</button>
+    </div>
+
+    <footer class="footer">
         <div class="social-media">
-            <a href="https://tiktok.com/@rezikal5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i>
+            <a href="https://tiktok.com/@rezikal5" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
             <a href="https://instagram.com/rezikal.a" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/rezikalakbar" target ="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-           
+            <a href="https://github.com/rezikalakbar" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
-       <p>  Rezikal Akbar</p>
-        
+        <p>Rezikal Akbar</p>
     </footer>
 
-    <!-- Musik Latar -->
-    <audio autoplay loop id="background-music">
-        <source src="background-music.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung elemen audio.
-    </audio>
-
-    <!-- Script untuk Menu Hamburger -->
-    <script>
-        const menuIcon = document.getElementById('menu-icon');
-        const menuList = document.getElementById('menu-list');
-
-        menuIcon.addEventListener('click', () => {
-            menuIcon.classList.toggle('active');
-            menuList.classList.toggle('active');
-        });
-    </script>
-
-    <!-- Script untuk Animasi Ketik -->
-    <script>
-        const typingText = "Ini adalah halaman beranda.";
-        const typingElement = document.querySelector('.typing-effect');
-        let index = 0;
-
-        function typeWriter() {
-            if (index < typingText.length) {
-                typingElement.textContent += typingText.charAt(index);
-                index++;
-                setTimeout(typeWriter, 100); // Kecepatan ketik (ms)
-            }
-        }
-
-        // Mulai animasi ketik setelah halaman dimuat
-        window.onload = typeWriter;
-    </script>
-
-    <!-- Script untuk Efek Daun Jatuh -->
-    <script>
-        const leafContainer = document.getElementById('leaf-container');
-
-        function createLeaf() {
-            const leaf = document.createElement('div');
-            leaf.classList.add('leaf');
-            leaf.innerHTML = '🍁'; // Emoji daun (bisa diganti dengan gambar)
-            leaf.style.left = Math.random() * 100 + 'vw'; // Posisi horizontal acak
-            leaf.style.animationDuration = Math.random() * 2 + 3 + 's'; // Kecepatan jatuh acak
-            leaf.style.opacity = Math.random(); // Opasitas acak
-            leaf.style.fontSize = Math.random() * 20 + 10 + 'px'; // Ukuran acak
-            leafContainer.appendChild(leaf);
-
-            // Hapus daun setelah selesai animasi
-            setTimeout(() => {
-                leaf.remove();
-            }, 5000);
-        }
-
-        // Buat daun setiap 300ms
-        setInterval(createLeaf, 300);
-    </script>
-
-    <!-- Hubungkan file JavaScript eksternal -->
     <script src="script.js"></script>
 </body>
 </html>
